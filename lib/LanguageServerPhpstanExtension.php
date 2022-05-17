@@ -27,19 +27,15 @@ final class LanguageServerPhpstanExtension implements Extension
      */
     public function load(ContainerBuilder $container): void
     {
-        $container->register(PhpstanDiagnosticProvider::class, function (Container $container) {
-            return new PhpstanDiagnosticProvider(
-                $container->get(Linter::class)
-            );
-        }, [
+        $container->register(PhpstanDiagnosticProvider::class, fn (Container $container) => new PhpstanDiagnosticProvider(
+            $container->get(Linter::class)
+        ), [
             LanguageServerExtension::TAG_DIAGNOSTICS_PROVIDER=> [
                 'name' => 'phpstan'
             ],
         ]);
 
-        $container->register(Linter::class, function (Container $container) {
-            return new PhpstanLinter($container->get(PhpstanProcess::class));
-        });
+        $container->register(Linter::class, fn (Container $container) => new PhpstanLinter($container->get(PhpstanProcess::class)));
 
         $container->register(PhpstanProcess::class, function (Container $container) {
             $binPath = $container->get(FilePathResolverExtension::SERVICE_FILE_PATH_RESOLVER)->resolve($container->getParameter(self::PARAM_PHPSTAN_BIN));

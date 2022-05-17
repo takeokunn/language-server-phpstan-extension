@@ -51,7 +51,7 @@ final class DiagnosticsParser
      */
     private function decodeJson(string $jsonString): array
     {
-        $decoded = json_decode($jsonString, true);
+        $decoded = json_decode($jsonString, true, 512, JSON_THROW_ON_ERROR);
 
         if (null === $decoded) {
             throw new RuntimeException(sprintf(

@@ -15,10 +15,7 @@ use function Safe\file_put_contents;
 
 final class PhpstanLinter implements Linter
 {
-    /**
-     * @var PhpstanProcess
-     */
-    private $process;
+    private \Phpactor\Extension\LanguageServerPhpstan\Model\PhpstanProcess $process;
 
     public function __construct(PhpstanProcess $process)
     {

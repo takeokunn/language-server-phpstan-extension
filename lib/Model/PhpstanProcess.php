@@ -12,30 +12,15 @@ use function Amp\ByteStream\buffer;
 
 final class PhpstanProcess
 {
-    /**
-     * @var DiagnosticsParser
-     */
-    private $parser;
+    private \Phpactor\Extension\LanguageServerPhpstan\Model\DiagnosticsParser $parser;
 
-    /**
-     * @var string
-     */
-    private $cwd;
+    private string $cwd;
 
-    /**
-     * @var LoggerInterface
-     */
-    private $logger;
+    private \Psr\Log\LoggerInterface $logger;
 
-    /**
-     * @var string
-     */
-    private $phpstanBin;
+    private string $phpstanBin;
 
-    /**
-     * @var PhpstanConfig
-     */
-    private $config;
+    private \Phpactor\Extension\LanguageServerPhpstan\Model\PhpstanConfig $config;
 
     public function __construct(
         string $cwd,
