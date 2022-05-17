@@ -14,24 +14,15 @@ final class PhpstanProcess
 {
     private \Phpactor\Extension\LanguageServerPhpstan\Model\DiagnosticsParser $parser;
 
-    private string $cwd;
-
-    private \Psr\Log\LoggerInterface $logger;
-
     private string $phpstanBin;
 
-    private \Phpactor\Extension\LanguageServerPhpstan\Model\PhpstanConfig $config;
-
     public function __construct(
-        string $cwd,
-        PhpstanConfig $config,
-        LoggerInterface $logger,
+        private string $cwd,
+        private PhpstanConfig $config,
+        private LoggerInterface $logger,
         DiagnosticsParser $parser = null
     ) {
         $this->parser = $parser ?: new DiagnosticsParser();
-        $this->cwd = $cwd;
-        $this->logger = $logger;
-        $this->config = $config;
     }
 
     /**

@@ -11,11 +11,8 @@ use Phpactor\LanguageServer\Core\Diagnostics\DiagnosticsProvider;
 
 final class PhpstanDiagnosticProvider implements DiagnosticsProvider
 {
-    private \Phpactor\Extension\LanguageServerPhpstan\Model\Linter $linter;
-
-    public function __construct(Linter $linter)
+    public function __construct(private Linter $linter)
     {
-        $this->linter = $linter;
     }
 
     /**
