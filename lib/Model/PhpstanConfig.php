@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan\Model;
 
 final class PhpstanConfig

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan\Provider;
 
 use Amp\Promise;
@@ -7,7 +9,7 @@ use Phpactor\Extension\LanguageServerPhpstan\Model\Linter;
 use Phpactor\LanguageServerProtocol\TextDocumentItem;
 use Phpactor\LanguageServer\Core\Diagnostics\DiagnosticsProvider;
 
-class PhpstanDiagnosticProvider implements DiagnosticsProvider
+final class PhpstanDiagnosticProvider implements DiagnosticsProvider
 {
     /**
      * @var Linter

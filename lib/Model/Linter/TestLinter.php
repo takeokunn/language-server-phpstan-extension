@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan\Model\Linter;
 
 use Amp\Delayed;
@@ -7,7 +9,7 @@ use Amp\Promise;
 use Phpactor\Extension\LanguageServerPhpstan\Model\Linter;
 use Phpactor\LanguageServerProtocol\Diagnostic;
 
-class TestLinter implements Linter
+final class TestLinter implements Linter
 {
     /**
      * @var array<Diagnostic>

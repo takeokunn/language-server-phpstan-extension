@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan\Tests\Provider;
 
 use Generator;
@@ -14,7 +16,7 @@ use Phpactor\LanguageServer\Test\ProtocolFactory;
 use function Amp\Promise\wait;
 use function Amp\delay;
 
-class PhpstanDiagnosticProviderTest extends TestCase
+final class PhpstanDiagnosticProviderTest extends TestCase
 {
     /**
      * @var LanguageServerTester
@@ -46,7 +48,7 @@ class PhpstanDiagnosticProviderTest extends TestCase
 
         wait(delay(10));
 
-        self::assertEquals(1, $this->tester->transmitter()->count());
+        $this->assertSame(1, $this->tester->transmitter()->count());
     }
 
     private function createTestLinter(): TestLinter

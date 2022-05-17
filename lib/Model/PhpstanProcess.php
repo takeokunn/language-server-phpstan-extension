@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan\Model;
 
 use Amp\Process\Process;
 use Amp\Promise;
 use Phpactor\LanguageServerProtocol\Diagnostic;
-use function Amp\ByteStream\buffer;
 use Psr\Log\LoggerInterface;
+use function Amp\ByteStream\buffer;
 
-class PhpstanProcess
+final class PhpstanProcess
 {
     /**
      * @var DiagnosticsParser

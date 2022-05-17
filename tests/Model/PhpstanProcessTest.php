@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan\Tests\Model;
 
 use Generator;
@@ -12,7 +14,7 @@ use Phpactor\LanguageServerProtocol\Diagnostic;
 use Psr\Log\NullLogger;
 use Phpactor\Extension\LanguageServerPhpstan\Tests\IntegrationTestCase;
 
-class PhpstanProcessTest extends IntegrationTestCase
+final class PhpstanProcessTest extends IntegrationTestCase
 {
     /**
      * @dataProvider provideLint
@@ -27,7 +29,7 @@ class PhpstanProcessTest extends IntegrationTestCase
             new NullLogger()
         );
         $diagnostics = \Amp\Promise\wait($linter->analyse($this->workspace()->path('test.php')));
-        self::assertEquals($expectedDiagnostics, $diagnostics);
+        $this->assertSame($expectedDiagnostics, $diagnostics);
     }
 
     /**

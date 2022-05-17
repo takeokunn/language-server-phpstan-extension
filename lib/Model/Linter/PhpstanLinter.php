@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan\Model\Linter;
 
 use Amp\Promise;
@@ -11,7 +13,7 @@ use Phpactor\TextDocument\TextDocumentUri;
 use function Safe\tempnam;
 use function Safe\file_put_contents;
 
-class PhpstanLinter implements Linter
+final class PhpstanLinter implements Linter
 {
     /**
      * @var PhpstanProcess

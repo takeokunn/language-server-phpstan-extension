@@ -1,19 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan\Tests\Model;
 
 use PHPUnit\Framework\TestCase;
 use Phpactor\Extension\LanguageServerPhpstan\Model\DiagnosticsParser;
 use RuntimeException;
 
-class DiagnosticsParserTest extends TestCase
+final class DiagnosticsParserTest extends TestCase
 {
     /**
      * @dataProvider provideParse
      */
     public function testParse(string $phpstanJson, int $count): void
     {
-        self::assertCount($count, (new DiagnosticsParser())->parse($phpstanJson));
+        $this->assertCount($count, (new DiagnosticsParser())->parse($phpstanJson));
     }
 
     public function provideParse()

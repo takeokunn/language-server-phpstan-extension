@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan;
 
 use Phpactor\Container\Container;
@@ -15,7 +17,7 @@ use Phpactor\Extension\Logger\LoggingExtension;
 use Phpactor\FilePathResolverExtension\FilePathResolverExtension;
 use Phpactor\MapResolver\Resolver;
 
-class LanguageServerPhpstanExtension implements Extension
+final class LanguageServerPhpstanExtension implements Extension
 {
     public const PARAM_PHPSTAN_BIN = 'language_server_phpstan.bin';
     public const PARAM_LEVEL = 'phpstan.level';

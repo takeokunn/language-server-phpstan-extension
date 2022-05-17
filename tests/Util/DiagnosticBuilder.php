@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Phpactor\Extension\LanguageServerPhpstan\Tests\Util;
 
 use Phpactor\LanguageServerProtocol\DiagnosticSeverity;
