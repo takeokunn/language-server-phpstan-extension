@@ -1,5 +1,5 @@
 {
-    "name": "phpactor/language-server-phpstan-extension",
+    "name": "takeoknn/language-server-phpstan-extension",
     "description": "Standalone Language Server and Phpactor Extension",
     "license": "MIT",
     "type": "phpactor-extension",

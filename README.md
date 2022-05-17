@@ -1,6 +1,8 @@
 LanguageServerPhpstan
 =====================
 
+forked by: [phpactor/language-server-phpstan-extension](https://github.com/phpactor/language-server-phpstan-extension.git)
+
 ![CI](https://github.com/phpactor/language-server-phpstan-extension/workflows/CI/badge.svg)
 
 Phpstan Language Server and [Phpactor](https://github.com/phpactor/phpactor) Extension.
@@ -16,7 +18,7 @@ Usage
 If you are using the [Phpactor Language Server](https://phpactor.readthedocs.io/en/master/usage/language-server.html)
 
 ```
-$ phpactor extension:install "phpactor/language-server-phpstan-extension"
+$ phpactor extension:install "takeokunn/language-server-phpstan-extension"
 ```
 
 ### Standalone
