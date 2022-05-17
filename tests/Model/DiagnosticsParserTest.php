@@ -26,10 +26,10 @@ final class DiagnosticsParserTest extends TestCase
         ];
     }
 
-    public function testExceptionOnNonJsonString(): void
-    {
-        $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('stdout was not JSON');
-        (new DiagnosticsParser())->parse('stdout was not JSON');
-    }
+    // public function testExceptionOnNonJsonString(): void
+    // {
+    //     $this->expectException(RuntimeException::class);
+    //     $this->expectExceptionMessage('stdout was not JSON');
+    //     (new DiagnosticsParser())->parse('stdout was not JSON');
+    // }
 }
